@@ -26,7 +26,8 @@
 	{% for code_name in code_names %}
           <form name="{{code_name}}" onSubmit="return handle_code('{{code_name}}')">
           	<label>{{code_name}}</label>
-          	<input name="code" type="text"></input>
+          	<input name="code" type="text">
+		<input type="submit" value="submit">
           	<span id="result-{{code_name}}" class="result">correct</span>
           </form>
 	{% endfor %}

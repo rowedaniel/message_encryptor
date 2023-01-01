@@ -65,15 +65,14 @@
 	let appliers = {{ code_appliers|safe }};
 	let mappings = {{ key_mappings|safe }};
 
-	function check_hash(val, hash) {
-		let val = document[formname].code.value;
-		return md5(val.toLowerCase()) == hash;
-	}
-
 	function handle_code(formname) {
+		function check_hash(val, hash) {
+			return md5(val.toLowerCase()) == hash;
+		}
+
 		let res = document.getElementById("result-"+formname);
 		let val = document[formname].code.value;
-		if(check_hash(val, hashes[formname]) {
+		if(check_hash(val, hashes[formname])) {
 			console.log(val);
 			console.log(md5(val));
 			res.classList.add("correct");

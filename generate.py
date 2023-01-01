@@ -33,6 +33,10 @@ def encrypt_message(message: str, keys: list[str]) -> str:
     return message
 
 
+def get_hash(value: str) -> str:
+    return md5(value.lower().encode()).hexdigest()
+
+
 def generate(
     template_filename: str,
     config_filename: str,
@@ -65,9 +69,7 @@ def generate(
     # get code names and hashes (safe to give to user)
     # the hash is used to give feedback when the user has the right code
     code_names = list(codes.keys())
-    code_hashes = {
-        name: md5(value.encode()).hexdigest() for name, value in codes.items()
-    }
+    code_hashes = {name: get_hash(value) for name, value in codes.items()}
 
     # map each code to list of messages it applies to
     code_appliers = {

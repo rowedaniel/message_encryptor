@@ -1,0 +1,21 @@
+codes:
+  code1: TESTCODEONE
+  code2: TESTCODETWO
+
+messages:
+  - Dear Max,
+  - How are
+  - you doing?
+  - I myself am
+  - doing well.
+  - sincerely,
+  - Daniel
+
+key_mapping:
+  - [code1, code2]
+  - [code2]
+  - [code1]
+  - [code2]
+  - [code2]
+  - [code1, code2]
+  - [code1, code2]

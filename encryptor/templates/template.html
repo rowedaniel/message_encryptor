@@ -15,7 +15,7 @@
 		display:inline-block;
 	}
 
-	.message.correct {
+	.correct {
 		color: green;
 	}
   </style>
@@ -33,9 +33,7 @@
 	{% endfor %}
 
 	<h2>Messages</h2>
-	{% for i,message in messages %}
-		<span id="message-{{i}}" class="message">{{message}}</span>
-	{% endfor %}
+	<div id="message">{% for i,msg in message %}<span>{{msg}}</span>{% endfor %}</div>
 
 
 
@@ -44,48 +42,52 @@
 //# sourceMappingURL=md5.min.js.map
 </script>
 <script>
-	function otp(s, k) {
-		let o = "";
+	let hashes = {{ code_hashes|safe }};
+	let keymasks = {{ keymasks|safe }};
+
+	let otp = function(message, key, keyname) {
 		let ab = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-		s = s.toUpperCase();
-		k = k.toUpperCase();
-		for(let i=0; i<s.length; ++i) {
-			let j1 = ab.indexOf(s.charAt(i));
-			let j2 = ab.indexOf(k.charAt(i));
+		key = key.toUpperCase();
+		let keymask = keymasks[keyname];
+		let key_index = 0;
+		for(let i=0; i<message.length; ++i) {
+			if(keymask[i] != "1") {
+				continue;
+			}
+			let j1 = ab.indexOf(message[i].innerHTML);
+			let j2 = ab.indexOf(key.charAt(key_index));
+			keymask[i] = "0";
+			let all_clear = true;
+			for(let kn in keymasks) {
+				if(keymasks[kn][i] === "1") {
+					all_clear = false;
+				}
+			}
+			if(all_clear) {
+				message[i].classList.add("correct");
+			}
+			key_index = (++key_index) % key.length;
+
 			if(j1 === -1 || j2 === -1) {
-				o += s.charAt(i);
 				continue;
 			}
 			let n = (j1 + j2) % ab.length;
-			o += ab[n];
+			message[i].innerHTML = ab[n];
 		}
-		return o;
+	}
+	let check_hash = function(val, hash) {
+		return md5(val.toUpperCase()) == hash;
 	}
 
-	let hashes = {{ code_hashes|safe }};
-	let appliers = {{ code_appliers|safe }};
-	let mappings = {{ key_mappings|safe }};
-
-	function handle_code(formname) {
-		function check_hash(val, hash) {
-			return md5(val.toLowerCase()) == hash;
-		}
-
+	let handle_code = function(formname) {
 		let res = document.getElementById("result-"+formname);
 		let val = document[formname].code.value;
 		if(check_hash(val, hashes[formname])) {
-			console.log(val);
-			console.log(md5(val));
 			res.classList.add("correct");
 			document[formname].onsubmit = () => {return false;};
-			for(let i of appliers[formname]) {
-				let msg = document.getElementById("message-"+i);
-				msg.innerHTML = otp(msg.innerHTML, val);
-				mappings[i].pop(mappings[i].indexOf(formname));
-				if(mappings[i].length === 0) {
-					msg.classList.add("correct");
-				}
-			}
+
+			let msg = document.querySelectorAll("#message span")
+			otp(msg, val, formname);
 		} else {
 			res.classList.remove("correct");
 		}

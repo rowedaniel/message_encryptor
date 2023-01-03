@@ -1,21 +1,12 @@
-codes:
-  code1: TESTCODEONE
-  code2: TESTCODETWO
+keys:
+  key1: TESTCODEONE
+  key2: TESTCODETWO
 
-messages:
-  - Dear Max,
-  - How are
-  - you doing?
-  - I myself am
-  - doing well.
-  - sincerely,
-  - Daniel
+message: "Dear Max, How are you doing? I myself am doing well. sincerely, Daniel"
 
-key_mapping:
-  - [code1, code2]
-  - [code2]
-  - [code1]
-  - [code2]
-  - [code2]
-  - [code1, code2]
-  - [code1, code2]
+keymasks:
+  key1:
+    "1111111111111111111111111111111111111111111111111111111111111111      "
+  key2:
+    "111111111                                                             "
+

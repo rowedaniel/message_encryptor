@@ -1,4 +1,4 @@
-codes:
+keys:
   1down: "conference room"
   2down: "graph wars"
   4down: "summerluga"
@@ -8,106 +8,23 @@ codes:
   7across: "Caillou trap remix"
   8across: "Burmy Old Codger"
 
-messages:
-  - "Sup Max"
-  - "and maybe"
-  - "Julia"
-  - "too,"
-  - "not sure"
-  - "exactly"
-  - "who I'm"
-  - "going to send"
-  - "this "
-  - "to"
-  - "yet."
-  - "I made"
-  - "this"
-  - "neat"
-  - "system"
-  - "for testing out"
-  - "encrypting"
-  - "messages"
-  - "and"
-  - "then"
-  - "gradually"
-  - "revealing"
-  - "them to"
-  - "people."
-  - "What thinkist"
-  - "thou?"
-  - "I'm pretty"
-  - "happy"
-  - "with how it"
-  - "turned out,"
-  - "I"
-  - "think."
-  - "Still some"
-  - "changes"
-  - "to make"
-  - "though."
-  - "If you"
-  - "want to"
-  - "try it"
-  - "out"
-  - "yourself,"
-  - "lemme"
-  - "know, and"
-  - "I can give"
-  - "you the"
-  - "source"
-  - "code."
-  - "..."
-  - "Ciao,"
-  - "Daniel"
+message: "Sup Max and maybe Julia too, not sure exactly who I'm going to send this to yet. I made this neat system for testing out encrypting messages and then gradually revealing them to people. What thinkist thou? I'm pretty happy with how it turned out, I think. Still some changes to make though. If you want to try it out yourself, lemme know, and I can give you the source code. ... Ciao, Daniel"
 
-key_mapping:
-  - [1down, 4down]
-  - [7across]
-  - [5down, 3across, 8across]
-  - [6down, 5down]
-  - [2down, 8across]
-  - [8across]
-  - [4down, 8across, 7across]
-  - [8across, 1down]
-  - [6down]
-  - [6down, 2down]
-  - [3across]
-  - [8across, 2down]
-  - [5down]
-  - [1down, 2down, 7across]
-  - [7across, 2down]
-  - [7across, 8across, 1down]
-  - [4down, 7across]
-  - [2down, 8across]
-  - [6down, 3across]
-  - [5down]
-  - [7across]
-  - [8across, 7across, 3across, 4down, 2down, 1down]
-  - [1down]
-  - [2down]
-  - [8across]
-  - [3across]
-  - [1down, 7across]
-  - [4down, 6down]
-  - [1down]
-  - [4down]
-  - [6down]
-  - [2down, 1down]
-  - [4down, 8across]
-  - [2down, 3across]
-  - [7across]
-  - [8across, 2down]
-  - [1down]
-  - [4down, 3across]
-  - [8across]
-  - [3across]
-  - [7across, 8across]
-  - [2down]
-  - [8across, 1down, 7across]
-  - [8across]
-  - [4down, 2down, 7across]
-  - [4down, 2down, 1down]
-  - [1down, 2down, 4down, 6down, 3across, 7across, 8across]
-  - []
-  - [1down]
-  - [3across, 2down, 8across]
+keymasks:
+  1down: 
+    "                  11111         1                      111111      1111        11                    1111                           11111111                     111    111     111        111      11             1111                     11111                   1111                        111          11                                     11111 11 111         1111      11           1 1    "
+  2down:
+    "111 111     11111 11111   1               1 1111                            1111 1 1111 1111 1111 111111          1  1                           11111   1111                       11111              11                 111                           1111                   111         111        111                                111 111 11                 1111    11    11      111 11 1   11"
+  4down:
+    "        111 11111 11111  1   11    1 111 1       1  111  1  11        11 1   1 1   11  1                          1 1   111    111          111       1              111                      1111       1   1   1   1   1       1     1           111   11   1 111           1111 11 1         1111111          1111             111                   11111              11 1     11  1 1       11   "
+  5down:
+    " 11     1 1 11 1               1 1 11 11 1    11 1     11111    1   1111 11 11        1 1111 111         11  1  1   1 1 1 111           11 1       11 1     11111111  111    111                  111       1111    1 1 1  1         1111    11 11     111        111  111   1    1      111                111            11 11                               1111      1 1   111    11   1 1 11      "
+  6down:
+    " 11     1 1 11 1                 1 11 11 1                          1111 11 11           111 111         11  1            111           11 1       11                 111                                                                                                                                                                                                                              "
+  3across:
+    "   1       1     1     111111          1              1111 1   11  1    1      111   1 1  1111   1    1111111   1       1   1111 11111                                              11111111                       1     1   1111111     1  1     1  11              1111 111                1111 11   11 1111 1111 1111111     1          111               11     111 1                1     1 11    "
+  7across:
+    "      111  1             1      1    1     11 111 11     1 1  1 111     1  111   1111 1 1                 11 111 111  11  1 11                111111   1111111    1111      11     111111        11    11111   1 1  1111    1             111111            11111          11      11   111        1    111        11         1111                      111         1  11 11     11 1 1       1    11  "
+  8across:
+    "                      111 111       1111                          11111                        1  111111111                           1                1           1            111              1      1    1    1     1     1     1     1      1     1     1     1     1     1     1     1     1     1     1     1     1     1    1    1    1    1    1    1    1    1    111111  11111       1  1   "
+

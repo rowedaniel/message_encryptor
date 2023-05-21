@@ -9,7 +9,12 @@ Second, I frequently want some ultimate goal or message at the end as a reward f
 With this project, I hope to remedy these issues.
 
 ## Requirements
-I used python 3.11 for this project, with poetry for managing 
+I used python 3.11 for this project, with poetry for managing dependencies.
+If you have poetry, installation should just be
+```sh
+poetry install
+```
+Otherwise, you can pip install everything listed in pyproject.toml
 
 ## Usage
 
@@ -17,7 +22,7 @@ This project is used to generate a supplementary HTML file which goes along a cr
 To use it, you specify a .yml config file listing a final message, the different keys (typically corresponding to 1-across, 3-down, etc. on the crossword), and a mask for each key that determines how it is ultimately applied to the final message.
 With this config file, you can generate the html file using the following syntax:
 
-```
+```sh
 python generate.py examples/crossword3.yml crossword3.html
 ```
 
